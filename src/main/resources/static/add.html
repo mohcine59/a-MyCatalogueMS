@@ -1,0 +1,22 @@
+<H2>Ajouter un produit</H2>
+<div class="container well">
+	<div class="alert alert-success" ng-show="isValidate">
+		<strong>Success : </strong>Produit ajoute en BDD !
+		<a ng-click="exitMessage()" class="close" data-dismiss="alert" aria-label="close" title="close">x</a>
+	</div>
+	<form>
+		<div class="form-group">
+			<label for="ref">REF:</label> <input type="text" class="form-control"
+				id="ref" ng-model="produit.ref">
+		</div>
+		<div class="form-group">
+			<label for="des">DESIGNATION:</label> <input type="text"
+				class="form-control" id="des" ng-model="produit.designation">
+		</div>
+		<div class="form-group">
+			<label for="prix">PRIX:</label> <input type="text"
+				class="form-control" id="prix" ng-model="produit.prix">
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="addProduit()">Enregistrer</button>
+	</form>
+</div>

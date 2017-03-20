@@ -1,0 +1,32 @@
+<H2>Search</H2>
+<form>
+	<label>Mot Cle:</label> <input type="text" ng-model="motCle">
+	<button class="btn btn-primary" ng-click="chercher(0)">Chercher</button>
+</form>
+
+<div ng-show="resultSearch" class="alert alert-warning">
+  <strong>No Result :</strong> Aucun produit existe !
+  <a ng-click="exitMessage()" class="close" data-dismiss="alert" aria-label="close" title="close">x</a>
+</div>
+
+<table class="table table-striped">
+	<thead>
+		<th>REF</th>
+		<th>DES</th>
+		<th>PRIX</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in produits.content">
+			<td>{{p.ref}}</td>
+			<td>{{p.designation}}</td>
+			<td>{{p.prix}}</td>
+		</tr>
+	</tbody>
+</table>
+<nav>
+	<ul class="pagination">
+		<li ng-class="{active:$index==pageCourante}" class="page-item"
+			ng-repeat="p in pages track by $index"><a
+			ng-click="chercher($index)">{{$index}}</a></li>
+	</ul>
+</nav>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Catalogue</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body ng-app="catalogueApp" >
+
+	<div class="container">
+		<div ng-controller="MainCtrl" ng-include="'/navbar.html'"></div>
+		<div class="container" ng-view></div>
+		
+	</div>
+
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<script type="text/javascript" src="js/mainAngular.js"></script>
+	<script type="text/javascript" src="js/mainCtrl.js"></script>
+	<script type="text/javascript" src="js/produitService.js"></script>
+	<script type="text/javascript" src="js/searchCtrl.js"></script>
+	<script type="text/javascript" src="js/addCtrl.js"></script>
+	<script type="text/javascript" src="js/updateCtrl.js"></script>
+	<script type="text/javascript" src="js/allCtrl.js"></script>
+</body>
+</html>

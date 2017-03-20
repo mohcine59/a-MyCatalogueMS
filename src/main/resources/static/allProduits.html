@@ -1,0 +1,53 @@
+<H2>Filtrer</H2>
+
+<form>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon">
+				<i class="fa fa-search"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="Recherche"
+				ng-model="searchFilter">
+		</div>
+	</div>
+</form>
+
+<table class="table table-striped">
+	<thead>
+		<th ng-click="sortType('ref')"><a> <span
+				ng-show="type == 'ref' && !sortReverse" class="fa fa-caret-down"></span>
+				<span ng-show="type == 'ref' && sortReverse" class="fa fa-caret-up"></span>
+				REF
+		</a></th>
+		<th ng-click="sortType('designation')"><a> <span
+				ng-show="type == 'des' && !sortReverse" class="fa fa-caret-down"></span>
+				<span ng-show="type == 'des' && sortReverse" class="fa fa-caret-up"></span>
+				DES
+		</a></th>
+		<th ng-click="sortType('prix')"><a> <span
+				ng-show="type == 'prix' && !sortReverse" class="fa fa-caret-down"></span>
+				<span ng-show="type == 'prix' && sortReverse" class="fa fa-caret-up"></span>
+				PRIX
+		</a></th>
+		<th><a>MODIFIER</a></th>
+		<th><a>SUPPRIMER</a></th>
+	</thead>
+	<tbody>
+		<tr
+			ng-repeat="p in produits | orderBy:type:sortReverse | filter:searchFilter">
+			<td>{{p.ref}}</td>
+			<td>{{p.designation}}</td>
+			<td>{{p.prix}}</td>
+			<td>
+				<a ng-click="modify(p.ref)">
+					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+				</a>
+			</td>
+			<td>
+				<a ng-click="deleteProduit(p.ref)">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
